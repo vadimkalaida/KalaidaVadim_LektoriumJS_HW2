@@ -1,0 +1,33 @@
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+#route {
+  width: 500px;
+  height: 500px;
+  margin: 0 auto;
+  border: 3px solid #000;
+}
+
+#circle {
+  width: 120px;
+  height: 120px;
+  border: 1px solid #000;
+  border-radius: 50%;
+  background: #ff0000;
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+#circle p {
+  text-transform: uppercase;
+  font-weight: 800;
+  color: #fff;
+}
