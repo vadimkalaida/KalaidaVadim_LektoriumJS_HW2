@@ -6,28 +6,114 @@ main {
 }
 
 #route {
-  width: 500px;
-  height: 500px;
+  width: 550px;
+  height: 600px;
   margin: 0 auto;
   border: 3px solid #000;
+  position: relative;
+  background: url('../img/tennis-courtbg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
-#circle {
+#ball {
   width: 120px;
   height: 120px;
   border: 1px solid #000;
   border-radius: 50%;
   background: #ff0000;
   cursor: pointer;
-  position: relative;
+  position: absolute;
   display: flex;
   text-align: center;
   align-items: center;
   justify-content: center;
+  animation: ballAnimationBottom 4.5s linear infinite,
+  ballAnimationRight 15s linear infinite;
+
 }
 
-#circle p {
+.circle-text {
   text-transform: uppercase;
   font-weight: 800;
   color: #fff;
+}
+
+@keyframes ballAnimationBottom {
+  0% {
+    bottom: calc(100% - 120px);
+  }
+  15% {
+    bottom: 0;
+    width: 120px;
+    height: 120px;
+  }
+  20% {
+    bottom: 0;
+    width: 130px;
+    height: 90px;
+  }
+  25% {
+    bottom: 0;
+    width: 120px;
+    height: 120px;
+  }
+  40% {
+    bottom: calc(100% - 120px);
+    width: 120px;
+    height: 120px;
+  }
+  45% {
+    bottom: calc(100% - 90px);
+    width: 130px;
+    height: 90px;
+  }
+  50% {
+    bottom: calc(100% - 120px);
+    width: 120px;
+    height: 120px;
+  }
+  65% {
+    bottom: 0;
+    width: 120px;
+    height: 120px;
+  }
+  70% {
+    bottom: 0;
+    width: 130px;
+    height: 90px;
+  }
+  75% {
+    bottom: 0;
+    width: 120px;
+    height: 120px;
+  }
+  90% {
+    bottom: calc(100% - 120px);
+    width: 120px;
+    height: 120px;
+  }
+  95% {
+    bottom: calc(100% - 90px);
+    width: 130px;
+    height: 90px;
+  }
+  100% {
+    bottom: calc(100% - 120px);
+    width: 120px;
+    height: 120px;
+  }
+}
+
+@keyframes ballAnimationRight {
+  0% {
+    left: 0;
+  }
+  50% {
+    left: calc(100% - 120px);
+  }
+  100% {
+    left: 0;
+  }
 }

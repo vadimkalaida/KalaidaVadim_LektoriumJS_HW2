@@ -1,0 +1,61 @@
+main {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.shop {
+  width: 350px;
+  height: 450px;
+  background: #8B8B8B;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.shop-headline1 {
+  text-transform: uppercase;
+  font-weight: 800;
+  font-size: 28px;
+  color: #ff0000;
+  margin-bottom: 1vh;
+}
+
+.input {
+  margin-top: 0;
+  width: 50%;
+  height: 25px;
+  text-align: center;
+  cursor: default;
+  background: #BBBBBB;
+  border: 1px solid #000;
+  border-radius: 5px;
+  color: #fff;
+  font-weight: 800;
+  font-size: 20px;
+}
+
+#priceInput {
+  margin-bottom: 1vh;
+}
+
+.shop-headline2 {
+  text-transform: uppercase;
+  font-weight: 800;
+  font-size: 28px;
+  color: #0000ff;
+  margin-bottom: 1vh;
+}
+
+#banknoteInput {
+  margin-bottom: 3vh;
+}
+
+.shop-headline3 {
+  text-transform: uppercase;
+  font-weight: 800;
+  font-size: 28px;
+  color: #00ff00;
+  margin-bottom: 1vh;
+}
