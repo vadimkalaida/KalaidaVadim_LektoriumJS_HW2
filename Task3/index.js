@@ -1,6 +1,6 @@
 let price = parseInt(prompt('Price:')),
   banknote = parseInt(prompt('Banknote(example: 50):')),
-  allBanknotes = [1, 2, 5, 10, 20, 50, 100, 200, 500],
+  allBanknotes = [1, 2, 5, 10, 20, 50, 100, 200, 500, 1000],
   changeBanknotes = [],
   priceInput = document.querySelector('#priceInput'),
   banknoteInput = document.querySelector('#banknoteInput'),
@@ -11,8 +11,8 @@ if(isNaN(price) || price <= 0) {
   location.reload();
 }
 
-if(price > 10000 || banknote > 10000) {
-  alert('Price/Banknote must be <= 10000!!!');
+if(price > 5000 || banknote > 5000) {
+  alert('Price/Banknote must be <= 5000!!!');
   location.reload();
 }
 

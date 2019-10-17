@@ -68,11 +68,15 @@ main {
 }
 
 #changeBanknotesInput {
+  width: 35vh;
   height: 35px;
   margin-bottom: 2vh;
   font-size: 14px;
   font-weight: 500;
   color: #000;
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 14px;
 }
 
 .grab {
