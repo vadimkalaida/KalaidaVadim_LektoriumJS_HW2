@@ -1,87 +1,69 @@
-let myArray = [3,0,-5,NaN,1,44,null, undefined, 'hello',-12,3,0,0,1,2,-3,-3,2,1,4,-2,-3,-1];
-let numberArray = [];
-let resultsArray = [];
+let myArray = [3,0,-5,NaN,1,44,null, undefined, 'hello',-12,3,0,0,1,2,-3,-3,2,1,4,-2,-3,-1],
+  numberArray = [],
+  resultsArr = [],
+  resultsObj = {},
+  myMax,
+  myMin,
+  mySum;
 
 function makeCorrectArray(arr) {
-  arr.forEach(function (i) {
-    let thisItem = parseInt(i);
-    if(!isNaN(thisItem)) {
-      numberArray.push(thisItem);
-    } else {
-      delete thisItem;
-    }
-  });
-  return numberArray;
+  numberArray = arr.filter(Number);
 }
 
 makeCorrectArray(myArray);
 
-let myMax = numberArray.reduce(function(a, b) {
-  if(a > b) {
-    return a;
-  } else {
-    return b;
-  }
-});
+function findMax(arr) {
 
-let myMin = numberArray.reduce(function(a, b) {
-  if(a < b) {
-    return a;
-  } else {
-    return b;
-  }
-});
-
-let mySum = numberArray.reduce(function(a, b) {
-    return a + b;
-});
-
-console.log('Max = ', myMax);
-resultsArray.push(myMax);
-console.log('Min = ', myMin);
-resultsArray.push(myMin);
-console.log('Sum = ', mySum);
-resultsArray.push(mySum);
-
-console.log('Замінив деякі елемнети в массиві')
-
-numberArray.splice(2, 2, 58);
-numberArray.splice(3, 3, -58);
-
-let myMax2 = numberArray.reduce(function(a, b) {
-  if(a > b) {
-    return a;
-  } else {
-    return b;
-  }
-});
-
-let myMin2 = numberArray.reduce(function(a, b) {
-  if(a < b) {
-    return a;
-  } else {
-    return b;
-  }
-});
-
-let mySum2 = numberArray.reduce(function(a, b) {
-  return a + b;
-});
-
-console.log('Max = ', myMax2);
-resultsArray.push(myMax2);
-console.log('Min = ', myMin2);
-resultsArray.push(myMin2);
-console.log('Sum = ', mySum2);
-resultsArray.push(mySum2);
-
-let myObj = {};
-
-function resultsArrayToObject(arr, obj) {
-  for(let i = 0; i < arr.length; i++) {
-    obj[i] = arr[i];
-  }
+  myMax = arr.reduce(function(a, b) {
+    if(a > b) {
+      return a;
+    } else {
+      return b;
+    }
+  }, 0);
+  resultsArr.push(myMax);
+  return 'Max = ' + myMax;
 }
 
-resultsArrayToObject(resultsArray, myObj);
-console.log('Об\'єкт з результатами: ', myObj);
+function findMin(arr) {
+  myMin = arr.reduce(function(a, b) {
+    if(a < b) {
+      return a;
+    } else {
+      return b;
+    }
+  }, 0);
+  resultsArr.push(myMin);
+  return 'Min = ' + myMin;
+
+}
+
+function findSum(arr) {
+  mySum = arr.reduce(function(a, b) {
+    return a + b;
+  }, 0);
+  resultsArr.push(mySum);
+  return 'Sum = ' + mySum;
+
+}
+
+function changeValue(arr, i, val) {
+  arr[i] = val;
+  return 'Array with new value: ' + arr;
+}
+
+function pushToObj(obj, resultsArr) {
+  for(let i = 0; i < resultsArr.length; i++) {
+    obj[i] = resultsArr[i];
+  }
+  return obj;
+}
+
+console.log('\'numberArray\' - valid array');
+console.log('\'resultsArr\' - max, min, sum will be pushed in this array');
+console.log('\'resultsObj\' - object with results');
+console.log('\'findMax(nameOfArray)\' - find max in array');
+console.log('\'findMin(nameOfArray)\' - find min in array');
+console.log('\'findSum(nameOfArray)\' - find sum in array');
+console.log('\'changeValue(nameOfArray, index, value)\' - change value in array');
+console.log('\'pushToObj(nameOfObject, nameOfResultsArray)\' - push array with results to object');
