@@ -12,9 +12,9 @@ function makeCorrectArray(arr) {
 
 makeCorrectArray(myArray);
 
-function findMax(arr) {
+Array.prototype.findMax = function() {
 
-  myMax = arr.reduce(function(a, b) {
+  myMax = this.reduce(function(a, b) {
     if(a > b) {
       return a;
     } else {
@@ -25,8 +25,8 @@ function findMax(arr) {
   return 'Max = ' + myMax;
 }
 
-function findMin(arr) {
-  myMin = arr.reduce(function(a, b) {
+Array.prototype.findMin = function() {
+  myMin = this.reduce(function(a, b) {
     if(a < b) {
       return a;
     } else {
@@ -38,8 +38,8 @@ function findMin(arr) {
 
 }
 
-function findSum(arr) {
-  mySum = arr.reduce(function(a, b) {
+Array.prototype.findSum = function() {
+  mySum = this.reduce(function(a, b) {
     return a + b;
   }, 0);
   resultsArr.push(mySum);
@@ -47,12 +47,12 @@ function findSum(arr) {
 
 }
 
-function changeValue(arr, i, val) {
-  arr[i] = val;
-  return 'Array with new value: ' + arr;
+Array.prototype.changeValue = function(i, val) {
+  this[i] = val;
+  return 'Array with new value: ' + this;
 }
 
-function pushToObj(obj, resultsArr) {
+Array.prototype.pushToObj = function(obj, resultsArr) {
   for(let i = 0; i < resultsArr.length; i++) {
     obj[i] = resultsArr[i];
   }
@@ -62,8 +62,8 @@ function pushToObj(obj, resultsArr) {
 console.log('\'numberArray\' - valid array');
 console.log('\'resultsArr\' - max, min, sum will be pushed in this array');
 console.log('\'resultsObj\' - object with results');
-console.log('\'findMax(nameOfArray)\' - find max in array');
-console.log('\'findMin(nameOfArray)\' - find min in array');
-console.log('\'findSum(nameOfArray)\' - find sum in array');
-console.log('\'changeValue(nameOfArray, index, value)\' - change value in array');
+console.log('\'findMax()\' - find max in array');
+console.log('\'findMin()\' - find min in array');
+console.log('\'findSum()\' - find sum in array');
+console.log('\'changeValue(index, value)\' - change value in array');
 console.log('\'pushToObj(nameOfObject, nameOfResultsArray)\' - push array with results to object');
